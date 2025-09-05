@@ -16,14 +16,14 @@ const postBlog = async (title: string | undefined, description: string | undefin
 }
 
 
-const PostBlog = () => {
+const PostBlog = () => { //main
 
     const router = useRouter();  //ページ遷移
     const titleRef = useRef<HTMLInputElement|null>(null); //初期値null、HTMLInputElement型
     const descriptionRef = useRef<HTMLTextAreaElement|null>(null);
 
 
-    const handleSubmit = async(e: React.FormEvent) => { //フォームの送信イベントを処理するための関数
+    const handleSubmit = async(e: React.FormEvent) => { //送信ボタンを押したときの処理
         e.preventDefault();
 
         postBlog(titleRef.current?.value, descriptionRef.current?.value);  // .current?.value:もしcurrentがnullでなければvalueを取得
